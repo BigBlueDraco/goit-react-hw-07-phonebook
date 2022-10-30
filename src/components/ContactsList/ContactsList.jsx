@@ -1,12 +1,11 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
-import { getContacts } from 'redux/selectors';
+import { getContacts, getFilter } from 'redux/selectors';
 
 export const ContactsList = () => {
   const contacts = useSelector(getContacts);
-  const filter = '';
-  // console.log(contacts[0].id);
+  const filter = useSelector(getFilter);
   return (
     <>
       <ul>
@@ -27,7 +26,6 @@ export const ContactsList = () => {
 };
 
 const ContactsItem = ({ id, name, number }) => {
-  console.table({ id, name, number });
   const dispath = useDispatch();
   return (
     <li id={id}>

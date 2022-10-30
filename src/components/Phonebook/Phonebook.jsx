@@ -11,7 +11,6 @@ export const Phonebook = () => {
   const contacts = useSelector(getContacts);
   return (
     <>
-      {console.log(contacts)}
       <FormAddContacts />
       <Section title="Contacts">
         <Filter />

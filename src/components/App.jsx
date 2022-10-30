@@ -6,14 +6,11 @@ import { Phonebook } from './Phonebook/Phonebook';
 
 export const App = () => {
   const dispatch = useDispatch();
-  // const isLoading = useSelector(getIsLoading);
   dispatch(fetchContacts());
   useEffect(() => {
     dispatch(fetchContacts());
-    console.log('i');
   }, [dispatch]);
 
-  // console.log(isLoading);
   return (
     <>
       <Phonebook />
