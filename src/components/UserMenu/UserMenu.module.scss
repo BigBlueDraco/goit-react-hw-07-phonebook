@@ -1,5 +1,16 @@
 .logout {
   position: absolute;
-  bottom: 10px;
-  right: 100px;
+  bottom: 30px;
+  right: 200px;
+}
+
+.logout {
+  &__btn {
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+      box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+    }
+  }
 }

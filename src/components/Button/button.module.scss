@@ -1,9 +1,10 @@
 .btn {
-  background-color: #fff;
+  background-color: #f2df3a;
   border: solid transparent;
+  border-radius: 5px;
 }
 
 .btn:hover,
 .btn:focus {
-  border: 2px solid #000;
+  border: 1px solid #000;
 }

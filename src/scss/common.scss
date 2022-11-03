@@ -7,19 +7,19 @@
   position: relative;
 
   @include mq(mob) {
-    width: 480px;
+    max-width: 480px;
   }
   @include mq(tab) {
-    width: 728px;
+    max-width: 728px;
   }
   @include mq(desk) {
-    width: 1366px;
+    max-width: 1366px;
     // padding: 0 26px;
     // padding-left: px;
   }
 }
 .content {
-  width: 70%;
+  width: 75%;
   float: right;
   margin-top: 10px;
 }
