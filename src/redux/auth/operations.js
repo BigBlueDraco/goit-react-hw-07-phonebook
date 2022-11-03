@@ -34,8 +34,17 @@ export const logIn = createAsyncThunk(
       setAuthHeader(resp.data.token);
       console.log(resp.data.token);
       return resp.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.message);
     }
   }
 );
+
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
+  try {
+    await axios.post('/users/logout');
+    clearAuthHeader();
+  } catch (err) {
+    return thunkAPI.rejectWithValue(err.message);
+  }
+});

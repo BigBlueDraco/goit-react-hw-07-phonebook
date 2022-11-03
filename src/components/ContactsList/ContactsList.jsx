@@ -1,6 +1,7 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact, fetchContacts } from 'redux/operations';
 import { getContacts, getFilter } from 'redux/selectors';
 
 export const ContactsList = () => {
@@ -11,7 +12,9 @@ export const ContactsList = () => {
       <ul>
         {contacts[0] &&
           contacts
-            .filter(({ name }) => name.toLowerCase().includes(filter))
+            .filter(({ name }) =>
+              name.toLowerCase().includes(filter.toLowerCase())
+            )
             .map(elem => (
               <ContactsItem
                 key={elem.name}
