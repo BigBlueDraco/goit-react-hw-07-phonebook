@@ -1,3 +1,4 @@
+import { PhonebookPage } from 'page/Contacts';
 import { HomePage } from 'page/HomePage';
 import { LoginPage } from 'page/LoginPage';
 import { RegisterPage } from 'page/RegisterPage';
@@ -30,10 +31,10 @@ export const App = () => {
             path="login"
             element={<RestrictedRoute component={<LoginPage />} />}
           />
-          {/* <Route path="login" element={} /> */}
+          <Route path="phonebook" element={<PhonebookPage />} />
         </Route>
       </Routes>
-      <Phonebook />
+      {/* <Phonebook /> */}
     </>
   );
 };
