@@ -1,16 +1,32 @@
-import React, { Component } from "react";
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import s from './button.module.scss';
 
-import s from "components/Button/button.module.scss"
-export class Button extends Component {
-    render(){
-        return(
-            <button className={s.button} type={this.props.type||"button"} onClick={(e) => {this.props.func&&this.props.func(e)}}>{this.props.text}</button>
-        )
-    }        
-}
+export const Button = ({
+  children = 'Default Button',
+  onClick = () => {},
+  className = '',
+  disabled = false,
+  active = false,
+  ...attrs
+}) => {
+  const classes = classNames(s['btn'], className, { active });
+  return (
+    <button
+      className={classes}
+      disable={disabled.toString()}
+      onClick={onClick}
+      {...attrs}
+    >
+      {children}
+    </button>
+  );
+};
 
-Button.propTypes ={
-    func: PropTypes.func,
-    text: PropTypes.string.isRequired,
-}
+Button.propTypes = {
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  classNames: PropTypes.string,
+  disabled: PropTypes.bool,
+  active: PropTypes.bool,
+};

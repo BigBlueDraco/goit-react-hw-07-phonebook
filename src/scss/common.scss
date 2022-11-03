@@ -1,0 +1,25 @@
+.container {
+  padding: 0 20px;
+  margin-left: auto;
+  // padding-left: 236px;
+  margin-right: auto;
+  width: 100%;
+  position: relative;
+
+  @include mq(mob) {
+    width: 480px;
+  }
+  @include mq(tab) {
+    width: 728px;
+  }
+  @include mq(desk) {
+    width: 1366px;
+    // padding: 0 26px;
+    // padding-left: px;
+  }
+}
+.content {
+  width: 70%;
+  float: right;
+  margin-top: 10px;
+}

@@ -1,7 +1,9 @@
-.button{
-    min-width: 100px;
-    height: 25px;
-    background-color: rgb(79, 111, 176);
-    border-radius: 15px;
-    font-size: 24px;
+.btn {
+  background-color: #fff;
+  border: solid transparent;
+}
+
+.btn:hover,
+.btn:focus {
+  border: 2px solid #000;
 }

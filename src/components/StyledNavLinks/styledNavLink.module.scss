@@ -1,0 +1,23 @@
+.btn {
+  border: solid 1px black;
+  background: transparent;
+  font-size: 14px;
+  width: 150px;
+  height: 30px;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  &:focus,
+  &:hover {
+    background-color: #f6f6f6;
+  }
+  &.active {
+    background: #000;
+  }
+}

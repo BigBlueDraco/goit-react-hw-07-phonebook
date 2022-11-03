@@ -7,12 +7,12 @@ import { FormAddContacts } from 'components/FormAddContacts/FormAddContacts';
 
 export const Phonebook = () => {
   return (
-    <>
+    <div className="container">
       <FormAddContacts />
       <Section title="Contacts">
         <Filter />
         <ContactsList />
       </Section>
-    </>
+    </div>
   );
 };
