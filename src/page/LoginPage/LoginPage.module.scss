@@ -1,0 +1,16 @@
+.login-page__card {
+  position: fixed;
+  top: calc(50% - 150px);
+  right: calc(50% - 250px);
+  // margin-top: calc(25% - 150px);
+}
+
+.login-page__wraper {
+  display: flex;
+  // height: 100%;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  // margin-top: calc(25% - 300px);
+}

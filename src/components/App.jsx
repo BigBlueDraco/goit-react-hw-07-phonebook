@@ -1,6 +1,6 @@
 import { PhonebookPage } from 'page/Contacts';
 import { HomePage } from 'page/HomePage';
-import { LoginPage } from 'page/LoginPage';
+import { LoginPage } from 'page/LoginPage/LoginPage';
 import { RegisterPage } from 'page/RegisterPage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -22,7 +22,6 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-
           <Route
             path="register"
             element={<RestrictedRoute component={<RegisterPage />} />}
