@@ -1,5 +1,8 @@
+import { TextField } from '@mui/material';
+import { Button } from 'components/Button/Button';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import s from './RegistrationForm.module.scss';
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -9,29 +12,51 @@ export const RegistrationForm = () => {
     const form = e.currentTarget;
     dispatch(
       register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        name: form.name.value,
+        email: form.email.value,
+        password: form.password.value,
       })
     );
     form.reset();
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Username
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+    <>
+      <p>Registration</p>
+      <form onSubmit={handleSubmit} autoComplete="off" className={s['form']}>
+        {/* <div className={s['input-group']}> */}
+        <TextField
+          sx={{ width: '100%' }}
+          name="name"
+          type="text"
+          id="standard-basic"
+          label="Username"
+          variant="standard"
+          required={true}
+        />
+        <TextField
+          sx={{ width: '100%' }}
+          name="email"
+          type="email"
+          id="standard-basic"
+          label="Email"
+          variant="standard"
+          required={true}
+        />
+        <TextField
+          sx={{ width: '100%' }}
+          name="password"
+          type="password"
+          id="standard-basic"
+          label="Password"
+          variant="standard"
+          required={true}
+        />
+        {/* </div> */}
+        <Button className={s['btn']} type="submit">
+          Sign up
+        </Button>
+      </form>
+    </>
   );
 };

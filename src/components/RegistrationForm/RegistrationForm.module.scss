@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn {
+  height: 40px;
+}
