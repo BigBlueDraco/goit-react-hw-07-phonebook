@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 
+import s from './FormAddContacts.module.scss';
+
 export const FormAddContacts = ({ inputFunc }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -30,26 +32,38 @@ export const FormAddContacts = ({ inputFunc }) => {
       {isExist && <Alert severity="error">Contact is exist</Alert>}
 
       <Section title="Add contact">
-        <form action="" onSubmit={onSubmit}>
-          <input
-            onInput={e => setName(e.target.value)}
-            type="text"
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
-          />
+        <form action="" onSubmit={onSubmit} className={s['form']}>
+          <div className={s['form__group']}>
+            <TextField
+              sx={{ width: '100%' }}
+              onInput={e => setName(e.target.value)}
+              id="standard-basic"
+              label="Name"
+              variant="standard"
+              type="text"
+              name="name"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required={true}
+            />
 
-          <input
-            onInput={e => setNumber(e.target.value)}
-            name="number"
-            type="tel"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-          />
+            <TextField
+              sx={{ width: '100%' }}
+              onInput={e => setNumber(e.target.value)}
+              id="standard-basic"
+              label="Number"
+              variant="standard"
+              type="tel"
+              name="number"
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required={true}
+            />
+          </div>
 
-          <Button type="submit" text="submit"></Button>
+          <Button className={s['form__btn']} type="submit" text="submit">
+            Add contact
+          </Button>
         </form>
       </Section>
     </>
