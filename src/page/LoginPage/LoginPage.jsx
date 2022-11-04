@@ -8,6 +8,7 @@ export const LoginPage = () => {
   return (
     <div className={containerClasses}>
       <Card className={s['login-page__card']}>
+        <p>Autorization</p>
         <LoginForm />
       </Card>
     </div>

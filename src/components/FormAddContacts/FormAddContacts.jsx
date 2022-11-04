@@ -1,3 +1,4 @@
+import { Alert, TextField } from '@mui/material';
 import { nanoid } from '@reduxjs/toolkit';
 import { Button } from 'components/Button/Button';
 import { Section } from 'components/Section/Section';
@@ -9,19 +10,25 @@ import { getContacts } from 'redux/selectors';
 export const FormAddContacts = ({ inputFunc }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  const [isExist, setIsExist] = useState(false);
   const dispath = useDispatch();
   const contacts = useSelector(getContacts);
 
   const onSubmit = e => {
     e.preventDefault();
     if (contacts && contacts.findIndex(elem => elem.name === name) !== -1) {
-      alert('Contact already exists');
+      setIsExist(true);
+      setTimeout(() => {
+        setIsExist(false);
+      }, 3000);
       return;
     }
     dispath(addContact({ id: nanoid(), name, number }));
   };
   return (
     <>
+      {isExist && <Alert severity="error">Contact is exist</Alert>}
+
       <Section title="Add contact">
         <form action="" onSubmit={onSubmit}>
           <input
@@ -41,6 +48,7 @@ export const FormAddContacts = ({ inputFunc }) => {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
+
           <Button type="submit" text="submit"></Button>
         </form>
       </Section>

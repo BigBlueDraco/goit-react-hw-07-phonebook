@@ -1,7 +1,7 @@
 import { PhonebookPage } from 'page/Contacts';
 import { HomePage } from 'page/HomePage';
 import { LoginPage } from 'page/LoginPage/LoginPage';
-import { RegisterPage } from 'page/RegisterPage';
+import { RegisterPage } from 'page/RegisterPage/RegisterPage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';

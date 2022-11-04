@@ -2,3 +2,7 @@
 @import './scss/reset.scss';
 @import './scss/mixins.scss';
 @import './scss/common.scss';
+
+body {
+  background-color: rgba(0, 120, 170, 0.1);
+}
