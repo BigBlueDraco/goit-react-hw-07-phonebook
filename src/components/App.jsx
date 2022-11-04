@@ -1,13 +1,14 @@
-import { PhonebookPage } from 'page/Contacts';
-import { HomePage } from 'page/HomePage';
-import { LoginPage } from 'page/LoginPage/LoginPage';
-import { RegisterPage } from 'page/RegisterPage/RegisterPage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { fetchContacts } from 'redux/operations';
+
+import { HomePage } from 'page/HomePage';
+import { PhonebookPage } from 'page/PhonebookPage/PhonebookPage';
+import { LoginPage } from 'page/LoginPage/LoginPage';
+import { RegisterPage } from 'page/RegisterPage/RegisterPage';
 import { Layout } from './Layout/Layout';
-import { Phonebook } from './Phonebook/Phonebook';
+
+import { fetchContacts } from 'redux/operations';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 
 export const App = () => {
