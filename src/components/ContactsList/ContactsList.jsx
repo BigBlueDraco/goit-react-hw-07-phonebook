@@ -10,7 +10,7 @@ import {
   getFilter,
   getIsLoading,
 } from 'redux/selectors';
-import s from './ContactsList.module.scss';
+import s from './styles.module.scss';
 
 export const ContactsList = () => {
   const contacts = useSelector(getContacts);
