@@ -7,8 +7,9 @@
 
 .list-tumb {
   overflow-y: scroll;
-  height: 400px;
+  height: 420px;
   padding: 5px 0;
+  position: relative;
 }
 
 .item {
@@ -19,6 +20,12 @@
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }
 
 .delete-btn {
@@ -29,6 +36,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.loader {
+  justify-content: center;
 }
 
 .delete-btn {

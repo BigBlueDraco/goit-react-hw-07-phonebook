@@ -10,6 +10,7 @@ import { Layout } from './Layout/Layout';
 
 import { fetchContacts } from 'redux/operations';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+import { AppBarLayout } from './Layout/AppBarLayout';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -21,8 +22,12 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+        <Route path="/" element={<AppBarLayout />}>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="phonebook" element={<PhonebookPage />} />
+          </Route>
+
           <Route
             path="register"
             element={<RestrictedRoute component={<RegisterPage />} />}
@@ -31,7 +36,6 @@ export const App = () => {
             path="login"
             element={<RestrictedRoute component={<LoginPage />} />}
           />
-          <Route path="phonebook" element={<PhonebookPage />} />
         </Route>
       </Routes>
 

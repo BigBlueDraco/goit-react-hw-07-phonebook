@@ -5,7 +5,7 @@ import { Section } from 'components/Section/Section';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
-import { getContacts, getError } from 'redux/selectors';
+import { getContacts } from 'redux/selectors';
 
 import s from './FormAddContacts.module.scss';
 
@@ -14,7 +14,6 @@ export const FormAddContacts = ({ inputFunc }) => {
   const [number, setNumber] = useState('');
   const [isExist, setIsExist] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
-  const [isError, setIsError] = useState(false);
   const dispath = useDispatch();
   const contacts = useSelector(getContacts);
 

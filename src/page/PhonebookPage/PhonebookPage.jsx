@@ -4,12 +4,15 @@ import { Filter } from 'components/Filter/Filter';
 import { FormAddContacts } from 'components/FormAddContacts/FormAddContacts';
 import { Section } from 'components/Section/Section';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from 'redux/auth/selectors';
 import { fetchContacts } from 'redux/operations';
 import s from './PhonebookPage.module.scss';
 
 export const PhonebookPage = () => {
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  console.log(user.name);
   dispatch(fetchContacts());
   useEffect(() => {
     dispatch(fetchContacts());
@@ -17,8 +20,6 @@ export const PhonebookPage = () => {
   return (
     <>
       <div className="container">
-        <Card className={s['phonebook-page__card']}></Card>
-
         <div className={s['phonebook-page__wraper']}>
           <Card className={s['phonebook-page__add-contacts']}>
             <FormAddContacts />
