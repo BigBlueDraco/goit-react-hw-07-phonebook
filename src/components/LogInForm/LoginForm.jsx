@@ -28,7 +28,7 @@ export const LoginForm = () => {
           sx={{ width: '100%' }}
           name="email"
           type="email"
-          id="standard-basic"
+          id="email"
           label="Email"
           variant="standard"
           required={true}
@@ -37,7 +37,7 @@ export const LoginForm = () => {
           sx={{ width: '100%' }}
           name="password"
           type="password"
-          id="standard-basic"
+          id="password"
           label="Password"
           variant="standard"
           required={true}
