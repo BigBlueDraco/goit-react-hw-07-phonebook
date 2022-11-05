@@ -5,7 +5,7 @@ import { Section } from 'components/Section/Section';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
-import { getContacts } from 'redux/selectors';
+import { getContacts, getError } from 'redux/selectors';
 
 import s from './FormAddContacts.module.scss';
 
@@ -13,23 +13,39 @@ export const FormAddContacts = ({ inputFunc }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [isExist, setIsExist] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
+  const [isError, setIsError] = useState(false);
   const dispath = useDispatch();
   const contacts = useSelector(getContacts);
+
+  const alert = func => {
+    func(true);
+    setTimeout(() => {
+      func(false);
+    }, 3000);
+  };
 
   const onSubmit = e => {
     e.preventDefault();
     if (contacts && contacts.findIndex(elem => elem.name === name) !== -1) {
-      setIsExist(true);
-      setTimeout(() => {
-        setIsExist(false);
-      }, 3000);
+      alert(setIsExist);
       return;
     }
     dispath(addContact({ id: nanoid(), name, number }));
+    alert(setIsAdded);
   };
   return (
     <>
-      {isExist && <Alert severity="error">Contact is exist</Alert>}
+      {isAdded && (
+        <Alert className="alert" severity="success">
+          Contact was added
+        </Alert>
+      )}
+      {isExist && (
+        <Alert className="alert" severity="error">
+          Contact is exist
+        </Alert>
+      )}
 
       <Section title="Add contact">
         <form action="" onSubmit={onSubmit} className={s['form']}>

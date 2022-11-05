@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 30px;
   justify-content: center;
 }
 
@@ -16,3 +16,11 @@
     height: 40px;
   }
 }
+
+// .alert {
+//   position: fixed;
+//   top: 10px;
+//   right: 30px;
+//   width: 400px;
+//   border-radius: 10px;
+// }
