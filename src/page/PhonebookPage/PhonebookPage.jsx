@@ -23,7 +23,7 @@ export const PhonebookPage = () => {
           <Card className={s['phonebook-page__add-contacts']}>
             <FormAddContacts />
           </Card>
-          <Card>
+          <Card className={s['phonebook-page__list-card']}>
             <Section title="Contacts">
               <Filter />
               <ContactsList />

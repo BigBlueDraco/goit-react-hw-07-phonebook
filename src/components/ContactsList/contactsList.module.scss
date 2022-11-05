@@ -1,0 +1,47 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+.list-tumb {
+  overflow-y: scroll;
+  height: 400px;
+  padding: 5px 0;
+}
+
+.item {
+  height: 50px;
+  padding: 5px 10px;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-btn {
+  border-color: transparent;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn {
+  &:hover,
+  &:focus {
+    border-color: transparent;
+  }
+  &:hover &__icon,
+  &:focus &__icon {
+    fill: #f2df3a;
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

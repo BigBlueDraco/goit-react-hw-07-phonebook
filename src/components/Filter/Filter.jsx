@@ -15,7 +15,7 @@ export const Filter = () => {
       onInput={searche}
       freeSolo
       id="free-solo-2-demo"
-      sx={{ width: 300 }}
+      sx={{ width: '100%' }}
       disableClearable
       options={contacts.map(option => option.name)}
       groupBy={option => option.firstLetter}
@@ -26,6 +26,7 @@ export const Filter = () => {
           InputProps={{
             ...params.InputProps,
             type: 'search',
+            variant: 'standard',
           }}
         />
       )}
