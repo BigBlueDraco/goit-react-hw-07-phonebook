@@ -7,6 +7,10 @@
 .logout {
   &__btn {
     background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    align-items: center;
 
     &:focus,
     &:hover {
