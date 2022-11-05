@@ -8,7 +8,6 @@ import { LoginPage } from 'page/LoginPage/LoginPage';
 import { RegisterPage } from 'page/RegisterPage/RegisterPage';
 import { Layout } from './Layout/Layout';
 
-import { fetchContacts } from 'redux/operations';
 import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
 import { AppBarLayout } from './Layout/AppBarLayout';
 import { refreshUser } from 'redux/auth/operations';
