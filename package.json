@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-07-phonebook",
+  "name": "react-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://BigBlueDraco.github.io/goit-react-hw-07-phonebook/",
+  "homepage": "https://BigBlueDraco.github.io/react-phonebook/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
